@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.jingbin.cloudreader.databinding.ActivityMainBinding;
 import com.example.jingbin.cloudreader.http.rx.RxBus;
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView llTitleGank;
     private ImageView llTitleOne;
     private ImageView llTitleDou;
+    private ImageView llTitleYue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,16 +75,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initId() {
         drawerLayout = mBinding.drawerLayout;
-        navView = mBinding.navView;
-        fab = mBinding.include.fab;
-        toolbar = mBinding.include.toolbar;
-        llTitleMenu = mBinding.include.llTitleMenu;
-        vpContent = mBinding.include.vpContent;
-        fab.setVisibility(View.GONE);
+        navView = mBinding.navView;    //侧滑部分
+        fab = mBinding.include.fab;    //右下角圆形按钮
+        toolbar = mBinding.include.toolbar;   //tollbar
+        llTitleMenu = mBinding.include.llTitleMenu;//侧滑菜单按钮
+        vpContent = mBinding.include.vpContent;  //viewpage
 
-        llTitleGank = mBinding.include.ivTitleGank;
-        llTitleOne = mBinding.include.ivTitleOne;
-        llTitleDou = mBinding.include.ivTitleDou;
+        llTitleGank = mBinding.include.ivTitleGank;  //tollbar第一个菜单
+        llTitleOne = mBinding.include.ivTitleOne;    //tollbar第二个菜单
+        llTitleDou = mBinding.include.ivTitleDou;    //tollbar第三个菜单
+        llTitleYue = mBinding.include.ivTitleYue;    //tollbar第四个菜单
+
+        fab.setVisibility(View.VISIBLE);
     }
 
     private void initListener() {
@@ -89,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBinding.include.ivTitleGank.setOnClickListener(this);
         mBinding.include.ivTitleDou.setOnClickListener(this);
         mBinding.include.ivTitleOne.setOnClickListener(this);
+        llTitleYue.setOnClickListener(this);
         fab.setOnClickListener(this);
     }
 
@@ -166,6 +172,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     vpContent.setCurrentItem(2);
                 }
                 break;
+
+            case R.id.iv_title_yue:
+                Toast.makeText(getApplicationContext(),"自定义",Toast.LENGTH_SHORT).show();
+
+                break;
+
             case R.id.ll_nav_homepage:// 主页
                 mBinding.drawerLayout.closeDrawer(GravityCompat.START);
                 mBinding.drawerLayout.postDelayed(new Runnable() {
@@ -204,6 +216,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }, 360);
                 break;
+            case R.id.fab:
+                Toast.makeText(getApplicationContext(),"邮箱",Toast.LENGTH_SHORT).show();
+
             default:
                 break;
         }
@@ -220,7 +235,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_search:
-//                Toast.makeText(this, "搜索", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "搜索", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -274,8 +289,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (mBinding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
                 mBinding.drawerLayout.closeDrawer(GravityCompat.START);
             } else {
-                // 不退出程序，进入后台
-                moveTaskToBack(true);
+
+                moveTaskToBack(true);// 不退出程序，进入后台
             }
             return true;
         }

@@ -31,7 +31,7 @@
                     android:layout_width="23dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/titlebar_menu" />
+                    android:src="@drawable/titlebar_menu"/>
             </FrameLayout>
 
             <HorizontalScrollView
@@ -66,6 +66,12 @@
                         android:layout_height="match_parent"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:src="@drawable/titlebar_friends" />
+                    <ImageView
+                        android:id="@+id/iv_title_yue"
+                        android:layout_width="55dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/titlebar_friends" />
 
                 </LinearLayout>
 
@@ -91,7 +97,6 @@
                 android:layout_gravity="bottom|end"
                 android:layout_margin="@dimen/fab_margin"
                 app:srcCompat="@android:drawable/ic_dialog_email" />
-
         </FrameLayout>
     </LinearLayout>
 </layout>
