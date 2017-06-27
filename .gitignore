@@ -4,3 +4,9 @@
 /.gradle/
 /local.properties
 /YxbUI.iml
+/app/app.iml
+/app/build/
+/xrecyclerview/build/
+/xrecyclerview/xrecyclerview.iml
+/zoomlibrary/build/
+/zoomlibrary/zoomlibrary.iml
