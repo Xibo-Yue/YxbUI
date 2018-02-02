@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView llTitleGank;
     private ImageView llTitleOne;
     private ImageView llTitleDou;
-    private ImageView llTitleYue;
 
 
     @Override
@@ -84,7 +83,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         llTitleGank = mBinding.include.ivTitleGank;  //tollbar第一个菜单
         llTitleOne = mBinding.include.ivTitleOne;    //tollbar第二个菜单
         llTitleDou = mBinding.include.ivTitleDou;    //tollbar第三个菜单
-        llTitleYue = mBinding.include.ivTitleYue;    //tollbar第四个菜单
 
         fab.setVisibility(View.VISIBLE);
     }
@@ -94,7 +92,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBinding.include.ivTitleGank.setOnClickListener(this);
         mBinding.include.ivTitleDou.setOnClickListener(this);
         mBinding.include.ivTitleOne.setOnClickListener(this);
-        llTitleYue.setOnClickListener(this);
         fab.setOnClickListener(this);
     }
 
